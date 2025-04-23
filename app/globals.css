@@ -1,0 +1,339 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --optical-kerning: -0.01em;
+}
+
+@layer utilities {
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+
+  .animation-delay-900 {
+    animation-delay: 900ms;
+  }
+
+  .animate-reveal {
+    animation: reveal 1s ease forwards;
+  }
+
+  .animate-blink {
+    animation: blink 0.8s infinite;
+  }
+
+  .animate-cursor {
+    animation: cursor 1s infinite;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease forwards;
+  }
+
+  /* Typography utilities */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  .hyphenate {
+    hyphens: auto;
+  }
+
+  .no-hyphenate {
+    hyphens: none;
+  }
+
+  .ligatures-common {
+    font-feature-settings: "liga" 1, "calt" 1;
+  }
+
+  .ligatures-all {
+    font-feature-settings: "liga" 1, "calt" 1, "dlig" 1, "swsh" 1;
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+
+  .proportional-nums {
+    font-variant-numeric: proportional-nums;
+  }
+
+  .oldstyle-nums {
+    font-variant-numeric: oldstyle-nums;
+  }
+
+  .lining-nums {
+    font-variant-numeric: lining-nums;
+  }
+
+  .small-caps {
+    font-variant-caps: small-caps;
+  }
+
+  .all-small-caps {
+    font-variant-caps: all-small-caps;
+  }
+
+  .optical-sizing-auto {
+    font-optical-sizing: auto;
+  }
+
+  /* Max width for optimal reading */
+  .max-readable {
+    max-width: 75ch;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes reveal {
+    0% {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes cursor {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  /* Ensure we have proper en-dash support */
+  .en-dash {
+    font-feature-settings: "tnum";
+  }
+
+  /* Add styles for the asymmetrical grid and hover effects */
+  .article-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2rem;
+  }
+
+  .article-lead {
+    grid-column: span 7;
+    grid-row: span 2;
+  }
+
+  .article-secondary {
+    grid-column: span 5;
+  }
+
+  .article-tertiary {
+    grid-column: span 6;
+  }
+
+  .small-caps-text {
+    font-variant-caps: all-small-caps;
+    letter-spacing: 0.25em;
+  }
+}
+
+/* Additional custom styles */
+@layer components {
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold tracking-tight;
+  }
+
+  .section-description {
+    @apply text-lg text-gray-600 max-w-3xl;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  .category-small-caps {
+    font-variant: small-caps;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+  }
+
+  .title-hover-underline {
+    position: relative;
+  }
+
+  .title-hover-underline::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: currentColor;
+    opacity: 0.5;
+    transition: width 0.3s ease;
+  }
+
+  .title-hover-underline:hover::after {
+    width: 100%;
+  }
+}
+
+/* Typography refinements */
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply font-sans text-base leading-normal text-black;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif tracking-tight text-balance;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold leading-extra-tight;
+    letter-spacing: -0.025em;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl font-semibold leading-tight;
+    letter-spacing: -0.0125em;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl font-medium leading-snug;
+    letter-spacing: -0.0125em;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl font-medium leading-snug;
+  }
+
+  h5 {
+    @apply text-lg md:text-xl font-medium leading-snug;
+  }
+
+  h6 {
+    @apply text-base md:text-lg font-medium leading-snug;
+  }
+
+  p {
+    @apply max-readable leading-relaxed text-pretty mb-4;
+  }
+
+  article p {
+    @apply leading-article font-serif text-pretty hyphenate;
+  }
+
+  .caption,
+  figcaption {
+    @apply text-sm text-gray-600 leading-normal mt-2;
+  }
+
+  blockquote {
+    @apply font-serif text-xl italic border-l-4 border-gray-300 pl-4 py-2 my-6;
+  }
+
+  /* Enable ligatures and other typography features for the serif font */
+  .font-serif {
+    @apply ligatures-common optical-sizing-auto;
+    letter-spacing: var(--optical-kerning);
+  }
+
+  /* Small text elements */
+  .text-xs,
+  .text-sm,
+  .caption,
+  figcaption,
+  .meta {
+    @apply font-sans tracking-wide;
+    letter-spacing: 0.01em;
+  }
+
+  /* Category labels and small caps */
+  .category,
+  .small-caps-text {
+    @apply font-sans uppercase text-xs tracking-widest;
+    letter-spacing: 0.1em;
+  }
+
+  /* Enhance prose styling for articles */
+  .prose h2 {
+    @apply font-serif text-2xl md:text-3xl font-medium mt-12 mb-6;
+  }
+
+  .prose h3 {
+    @apply font-serif text-xl md:text-2xl font-medium mt-8 mb-4;
+  }
+
+  .prose p {
+    @apply font-serif text-base leading-article text-pretty hyphenate mb-6;
+  }
+
+  .prose strong {
+    @apply font-medium;
+  }
+
+  .prose-lg p {
+    @apply text-lg;
+  }
+
+  .prose-serif p {
+    @apply font-serif;
+  }
+
+  .prose a {
+    @apply text-black font-medium underline underline-offset-4 decoration-gray-300 hover:decoration-black transition-colors;
+  }
+
+  .prose ul,
+  .prose ol {
+    @apply my-6 pl-6;
+  }
+
+  .prose li {
+    @apply mb-2;
+  }
+
+  .prose blockquote {
+    @apply font-serif text-xl italic border-l-4 border-gray-300 pl-6 py-2 my-8;
+  }
+}
