@@ -66,7 +66,7 @@ export default function Footer() {
         </div>
 
         {/* Navigation Section */}
-        <div className="mb-20 grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10">
+        <div className="mb-20 grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-10">
           <div>
             <h4 className="font-serif text-lg font-medium mb-4">Style</h4>
             <ul className="space-y-3">
@@ -86,60 +86,6 @@ export default function Footer() {
                   Seasonal Transitions
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="/editorial/category/minimalism"
-                  className="font-serif text-gray-600 hover:text-black transition-colors duration-300"
-                >
-                  Considered Minimalism
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/editorial/category/color"
-                  className="font-serif text-gray-600 hover:text-black transition-colors duration-300"
-                >
-                  Color Studies
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-serif text-lg font-medium mb-4">Culture</h4>
-            <ul className="space-y-3">
-              <li>
-                <Link
-                  href="/editorial/category/art"
-                  className="font-serif text-gray-600 hover:text-black transition-colors duration-300"
-                >
-                  Gallery Notes
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/editorial/category/literature"
-                  className="font-serif text-gray-600 hover:text-black transition-colors duration-300"
-                >
-                  Literary Influences
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/editorial/category/architecture"
-                  className="font-serif text-gray-600 hover:text-black transition-colors duration-300"
-                >
-                  Architectural Spaces
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/editorial/category/design"
-                  className="font-serif text-gray-600 hover:text-black transition-colors duration-300"
-                >
-                  Design Principles
-                </Link>
-              </li>
             </ul>
           </div>
 
@@ -148,34 +94,18 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <Link
-                  href="/editorial/category/neighborhoods"
-                  className="font-serif text-gray-600 hover:text-black transition-colors duration-300"
-                >
-                  Neighborhood Profiles
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/editorial/category/dining"
-                  className="font-serif text-gray-600 hover:text-black transition-colors duration-300"
-                >
-                  Considered Dining
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/editorial/category/gatherings"
-                  className="font-serif text-gray-600 hover:text-black transition-colors duration-300"
-                >
-                  Cultural Gatherings
-                </Link>
-              </li>
-              <li>
-                <Link
                   href="/editorial/category/hidden"
                   className="font-serif text-gray-600 hover:text-black transition-colors duration-300"
                 >
                   Hidden Corners
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/editorial/category/neighborhoods"
+                  className="font-serif text-gray-600 hover:text-black transition-colors duration-300"
+                >
+                  Neighborhood Profiles
                 </Link>
               </li>
             </ul>
@@ -202,18 +132,18 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/services#event-styling"
+                  href="/services"
                   className="font-serif text-gray-600 hover:text-black transition-colors duration-300"
                 >
-                  Event Styling
+                  Sample Sale Excursion
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/fitting-room"
+                  href="/services"
                   className="font-serif text-gray-600 hover:text-black transition-colors duration-300"
                 >
-                  Fitting Room
+                  Personal Shopping
                 </Link>
               </li>
             </ul>

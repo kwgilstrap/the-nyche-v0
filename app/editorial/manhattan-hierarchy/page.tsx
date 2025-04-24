@@ -6,7 +6,7 @@ export default function ManhattanHierarchyPage() {
     <main className="min-h-screen bg-white">
       <div className="container mx-auto px-4 py-12">
         <div className="mb-8">
-          <Link href="/editorial-showcase" className="inline-flex items-center text-sm hover:underline mb-4">
+          <Link href="/editorial" className="inline-flex items-center text-sm hover:underline mb-4">
             <ArrowLeft className="h-4 w-4 mr-1" />
             Back to Editorial
           </Link>
