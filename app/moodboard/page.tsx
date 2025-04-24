@@ -22,6 +22,19 @@ export default function MoodboardPage() {
           <p className="text-lg text-gray-600">Visual inspirations that define our aesthetic</p>
         </div>
 
+        <div className="mb-10">
+          <h2 className="text-xl font-semibold mb-2">Link Your Pinterest</h2>
+          <p className="text-sm text-gray-500 mb-3">Want to sync your style board? For now, we link. Full integration coming soon.</p>
+          <a
+            href="https://pinterest.com/YOUR_USERNAME"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-4 py-2 text-sm font-medium border border-gray-300 rounded hover:bg-gray-100 transition"
+          >
+            Visit My Pinterest →
+          </a>
+        </div>
+
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {moodboardItems.map((item) => (
             <div

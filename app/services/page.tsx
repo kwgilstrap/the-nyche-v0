@@ -31,6 +31,42 @@ export default function ServicesPage() {
       ],
     },
     {
+      id: "sample-sale-tour",
+      title: "Sample Sale Tour",
+      description: "Guided excursions to NYC's best sample sales. Based on availability and seasonal schedules.",
+      image: "/placeholder.svg?height=600&width=800",
+      features: [
+        "Exclusive invites to top designer sample sales",
+        "Guided shopping and expert advice",
+        "Day-of route planning and coordination",
+        "Real-time budget and fit guidance"
+      ]
+    },
+    {
+      id: "ebay-sourcing",
+      title: "eBay Sourcing",
+      description: "Let us find rare menswear gems for you — authenticated and tailored to your taste.",
+      image: "/placeholder.svg?height=600&width=800",
+      features: [
+        "Item authentication and quality checks",
+        "Tailored eBay searches based on your wardrobe",
+        "Direct purchase or proxy bid support",
+        "Shipping and return coordination"
+      ]
+    },
+    {
+      id: "seasonal-planning",
+      title: "Seasonal Planning",
+      description: "Build your wardrobe around the rhythm of the city. Get curated recs for seasonal transitions.",
+      image: "/placeholder.svg?height=600&width=800",
+      features: [
+        "Seasonal style analysis",
+        "Layering and temperature-conscious styling",
+        "Color theory for seasonal palettes",
+        "Closet rotation scheduling"
+      ]
+    },
+    {
       id: "event-styling",
       title: "Event Styling",
       description:
