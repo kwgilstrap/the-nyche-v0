@@ -10,29 +10,25 @@ const nextConfig = {
     unoptimized: true,
   },
   
+  // Updated pageExtensions
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
   
+  // Output standalone
   output: 'standalone',
   
+  // Environment variables
   env: {
     NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000',
   },
   
-  // CRITICAL: Replace experimental config
+  // Corrected experimental config
   serverExternalPackages: ['gray-matter', 'fs', 'path'],
   
+  // Add webpack configuration for markdown
   webpack: (config, { isServer }) => {
-    // Add markdown loader
     config.module.rules.push({
       test: /\.md$/,
-      use: [
-        {
-          loader: 'raw-loader',
-          options: {
-            esModule: false
-          }
-        }
-      ]
+      use: 'raw-loader'
     });
     
     return config;

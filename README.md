@@ -1,125 +1,131 @@
 # 🗽 The NYChe
 
-**Image isn’t everything—it’s the first thing.**
+**Image isn’t everything—it's the first thing.**
 
 A modern menswear and lifestyle platform built with purpose and polish.  
 The NYChe is a digital home for New York City dressers who move with intent, appreciate quality, and reject the algorithm’s hype.
 
 ---
 
-## 🚀 Tech Stack
+# 📄 Product Overview
 
-| Tool / Framework      | Purpose                              |
-|------------------------|--------------------------------------|
-| **Next.js** `v15.2.4`  | Frontend framework                   |
-| **React** `v19.1.0`    | Component-based UI                   |
-| **TailwindCSS**        | Utility-first styling                |
-| **Typescript**         | Strong typing, safer dev             |
-| **PostCSS**            | Tailwind & plugin processing         |
-| **Vercel**             | Hosting & deployment                 |
+- Serve high-quality, editorialized menswear and lifestyle content
+- Offer styling and shopping services (virtual and in-person)
+- Integrate curated affiliate shopping opportunities
+- Build a brand identity rooted in substance over status
 
 ---
 
-## 📁 Project Structure
+# 🛠️ Tech Stack
+
+| Layer         | Choice             | Notes                              |
+|---------------|---------------------|------------------------------------|
+| Frontend      | Next.js 15.2.4       | App Router, SSR/SSG                |
+| Styling       | Tailwind CSS         | Utility-first CSS                  |
+| CMS           | Markdown             | Local content in `/src/content`    |
+| Hosting       | Vercel               | Git-linked, fast edge deploy       |
+| Backend       | Supabase (optional)  | Forms, auth if needed              |
+| E-comm        | TikTok Shop          | Integrated via iframe/modal        |
+| Email         | Beehiiv              | CRM and newsletters                |
+
+---
+
+# 🧱 Folder Structure
 
 ```bash
 .
 ├── app/                 # Next.js app directory
-├── components/         # Reusable UI components
-├── lib/                # Utilities and helper functions
-├── hooks/              # Custom React hooks
-├── styles/             # Tailwind & global CSS
-├── public/             # Static assets
-├── .next/              # Build output (auto-generated)
-├── package.json        # Project dependencies & scripts
-└── next.config.mjs     # Next.js config
+├── components/          # Reusable UI components
+├── lib/                 # Utilities and helper functions
+├── hooks/               # Custom React hooks
+├── styles/              # Tailwind & global CSS
+├── public/              # Static assets
+├── src/content/         # Markdown content (editorial, services)
+├── src/docs/            # Strategy, memory-bank, and usage docs
+├── updates/             # WIP or scratchpad files
+├── package.json         # Project dependencies
+├── next.config.mjs      # Next.js configuration
+└── README.md            # Project overview
+```
 
+---
 
+# 🧠 Memory Bank
 
-⸻
+Refer to [`/src/docs/memory-bank.md`](../docs/memory-bank.md)  
+All Cursor-based contributions should read this file first.
 
-🧠 Brand Philosophy
+---
 
-The NYChe is where fashion-minded NYC men go to sharpen their style, slow their roll, and shop smart—without gimmicks or hype.
+# 🛠 Local Development
 
-Minimalist in design, maximalist in value.
-This is a quiet rebellion against disposable trends, loud style, and rushed living.
+## Prerequisites
 
-⸻
+- Node >=20 (recommended via `n`)
+- NPM >=9
 
-🛠 Local Development
+## Quickstart
 
-🧱 Prerequisites
-	•	Node >=20 (recommended via n)
-	•	NPM >=9
-	•	Clone the repo:
-
+```bash
 git clone https://github.com/kwgilstrap/the-nyche-v0.git
 cd the-nyche-v0
-
-
-
-📦 Install dependencies
-
 rm -rf node_modules package-lock.json
 npm install
-
-🔧 Run dev server
-
 npm run dev
+```
 
-App will be live at: http://localhost:3000
+App runs at: http://localhost:3000
 
-⸻
+---
 
-🌐 Deployment
+# 🌐 Deployment
 
-This project is deployed via Vercel.
+- **Platform:** Vercel
+- **Domains:** thenyche.com, www.thenyche.com → cname.vercel-dns.com
+- **A Record:** 76.76.21.21
 
-DNS Notes:
-	•	Domain: thenyche.com
-	•	www.thenyche.com → CNAME to cname.vercel-dns.com
-	•	A records point to Vercel IP: 76.76.21.21
+**Environment Variables:**
 
-Environment Variables
+```bash
+NEXT_PUBLIC_SUPABASE_URL=your-supabase-url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-key
+```
 
-If required, place them in a .env.local file:
+---
 
-NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
+# 📚 Documentation Map
 
+- [`/src/docs/The-NYChe-Master-Strategy-Document.md`](../docs/The-NYChe-Master-Strategy-Document.md)
+- [`/src/docs/Cursor_Build_GroundRules.md`](../docs/Cursor_Build_GroundRules.md)
 
+---
 
-⸻
+# ⚙️ Development Norms
 
-🧪 Testing & Linting
+- No framework switches (Next.js only)
+- No CMS migration (Markdown stays)
+- Default JavaScript (not TypeScript unless needed)
+- Supabase optional, minimal backend
+- Deno plugin used only for Edge Functions
 
-Coming soon.
+---
 
-⸻
+# 🧪 Testing & Linting
 
-🤝 Contributing
+(Coming Soon)
 
-Currently a solo dev lab by @kwgilstrap.
-Feel free to fork, clone, or just watch the glow-up.
+---
 
-⸻
+# ⚖️ License
 
-📸 Inspiration
+MIT License.  
+Built and maintained by @kwgilstrap.
 
-A love letter to:
-	•	NYC street style
-	•	Drake’s London
-	•	Beau Brummell
-	•	The downtown walk from The Armoury to SoHo
+---
 
-⸻
+# 🏁 Final Notes
 
-⚖️ License
+This platform is a quiet rebellion against hype, clutter, and speed.  
+The NYChe is where NYC men come to dress well, live slow, and move with purpose.
 
-This project is MIT licensed.
-
-⸻
-
-
-
+---

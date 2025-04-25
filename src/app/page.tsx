@@ -1,5 +1,6 @@
 import Header from "@/components/header"
 import { ContentCard } from "@/components/content-card"
+import { getAllEditorialSlugs } from "@/lib/getAllEditorialSlugs"
 
 export default function Home() {
   const sections = [
@@ -27,58 +28,52 @@ export default function Home() {
     // Removed "Fitting Room" card as it's now prominently in the navigation
   ]
 
-  const featuredArticles = [
-    {
-      id: "featured-1",
-      title: "The Enduring Appeal of Monochrome Wardrobes",
-      description: "Why limiting your palette might be the key to unlocking your personal style.",
-      category: "Style",
-      date: "August 12, 2023",
-      readingTime: "5–7 minutes",
-      image: "/placeholder.svg?height=600&width=400",
-      href: "/editorial/monochrome-wardrobes",
-    },
-    {
-      id: "featured-2",
-      title: "Seasonal Transitions: Building a Year-Round Capsule",
-      description: "Creating a wardrobe that adapts seamlessly through New York's distinct seasons.",
-      category: "Style",
-      date: "September 5, 2023",
-      readingTime: "3–5 minutes",
-      image: "/placeholder.svg?height=600&width=400",
-      href: "/editorial/seasonal-transitions",
-    },
-    {
-      id: "featured-3",
-      title: "The New Downtown: Shifting Cultural Centers in NYC",
-      description: "How creative communities are redefining neighborhood identities across the city.",
-      category: "Scene",
-      date: "October 18, 2023",
-      readingTime: "8–10 minutes",
-      image: "/placeholder.svg?height=600&width=400",
-      href: "/editorial/new-downtown",
-    },
-    {
-      id: "featured-4",
-      title: "Textile Innovation: The Future of Sustainable Fabrics",
-      description: "Exploring cutting-edge materials that are reshaping the fashion industry's environmental impact.",
-      category: "Innovation",
-      date: "November 2, 2023",
-      readingTime: "6–8 minutes",
-      image: "/placeholder.svg?height=500&width=500",
-      href: "/editorial/textile-innovation",
-    },
-    {
-      id: "featured-5",
-      title: "The Art of the Capsule Collection",
-      description: "How designers are distilling their vision into focused, limited-edition releases.",
-      category: "Design",
-      date: "November 15, 2023",
-      readingTime: "4–6 minutes",
-      image: "/placeholder.svg?height=400&width=600",
-      href: "/editorial/capsule-collections",
-    },
+  // Get all articles from the editorial directory
+  const allArticles = getAllEditorialSlugs()
+  
+  // Valid slugs that we know exist in the filesystem
+  const validSlugs = [
+    'monochrome-wardrobes',
+    'seasonal-turnover',
+    'sample-sale-strategy',
+    'vanishing-classics',
+    'local-tailor-guide'
   ]
+  
+  // Fallback articles in case no articles are found or filtered
+  const fallbackArticles = [
+    {
+      slug: 'fallback-article',
+      title: 'Coming Soon',
+      description: 'Our editorial team is working on new content',
+      date: new Date().toISOString()
+    }
+  ]
+  
+  // Filter articles to only include those with valid slugs
+  const filteredArticles = allArticles.length > 0 ? 
+    allArticles.filter(article => validSlugs.includes(article.slug)) : []
+  
+  // Use fallbacks if no articles are available after filtering
+  const articlesToUse = filteredArticles.length > 0 ? filteredArticles : fallbackArticles
+  
+  // Map articles to the format needed for display, limited to 5 items
+  const featuredArticles = articlesToUse
+    .slice(0, 5)
+    .map((article, index) => ({
+      id: `featured-${index + 1}`,
+      title: article.title,
+      description: article.description,
+      category: "Style", // Default category
+      date: new Date(article.date).toLocaleDateString('en-US', { 
+        year: 'numeric',
+        month: 'long', 
+        day: 'numeric'
+      }),
+      readingTime: "5–7 minutes", // Default reading time
+      image: "/placeholder.svg?height=600&width=400",
+      href: `/editorial/${article.slug}`,
+    }))
 
   return (
     <main>
