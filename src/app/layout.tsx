@@ -3,8 +3,8 @@ import "./globals.css"
 import type { Metadata } from "next"
 import { Inter, Playfair_Display } from "next/font/google"
 import { SpeedInsights } from "@vercel/speed-insights/next"
-import Header from "@/components/header"
-import Footer from "@/components/footer"
+import Header from "../components/Header"
+import Footer from "../components/Footer"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -12,7 +12,7 @@ const inter = Inter({
   display: "swap",
   fallback: ["system-ui", "sans-serif"],
 })
-
+// @assistant:fix issue with the font and article cards
 const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-playfair",
@@ -45,3 +45,4 @@ export default function RootLayout({
     </html>
   )
 }
+// @assistant:fix issue with the layout

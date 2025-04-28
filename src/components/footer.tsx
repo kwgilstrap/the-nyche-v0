@@ -34,36 +34,6 @@ export default function Footer() {
       ></div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Newsletter Section */}
-        <div className="mb-20 max-w-xl mx-auto text-center">
-          <h3 className="font-serif text-2xl font-medium mb-4">Join Our Correspondence</h3>
-          <p className="text-gray-600 mb-6 max-w-md mx-auto">
-            Receive curated insights on style, culture, and exclusive invitations to our events.
-          </p>
-
-          {subscribed ? (
-            <div className="animate-fade-in text-gray-800 font-serif italic">
-              Thank you for subscribing. The first correspondence is on its way.
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Your email address"
-                className="flex-grow px-4 py-3 bg-transparent border-b border-gray-300 focus:border-black focus:outline-none transition-colors duration-300"
-                required
-              />
-              <button
-                type="submit"
-                className="px-6 py-3 bg-black text-white font-medium tracking-wide text-sm uppercase transition-all duration-300 hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
-              >
-                Subscribe
-              </button>
-            </form>
-          )}
-        </div>
 
         {/* Navigation Section */}
         <div className="mb-20 grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-10">

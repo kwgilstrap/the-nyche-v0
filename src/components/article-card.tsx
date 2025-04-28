@@ -11,7 +11,7 @@ interface ArticleCardProps {
   date: string
   isFeature?: boolean
 }
-
+// @assitstatn:upgrade-article-cards
 export default function ArticleCard({
   slug,
   title,
@@ -30,7 +30,7 @@ export default function ArticleCard({
         <h2 className="font-serif text-xl md:text-2xl font-semibold mb-2 tracking-tight group-hover:text-gray-700 transition-colors">{title}</h2>
         <p className="font-sans text-base text-gray-700 mb-3">{description}</p>
         <div className="flex items-center justify-between">
-          <time className="text-sm text-gray-500 tabular-nums">{formatDate(date)}</time>
+          <time className="text-sm text-gray-500 tabular-nums">{FormData(date)}</time>
           <span className="inline-flex items-center text-sm font-medium text-black opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all">
             Read article
             <ArrowRight className="w-4 h-4 ml-1" />
