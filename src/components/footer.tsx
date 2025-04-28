@@ -1,11 +1,12 @@
 "use client"
 
+// @assistant:fix-footer-layout
 import type React from "react"
 
 import { useState } from "react"
 import Link from "next/link"
 
-export default function Footer() {
+export default function FooterSection() {
   const [email, setEmail] = useState("")
   const [subscribed, setSubscribed] = useState(false)
 
@@ -23,7 +24,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="relative bg-white pt-24 pb-16">
+    <footer className="relative bg-white pt-32 pb-20">
       {/* Paper grain texture overlay */}
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.03] z-0"
@@ -34,6 +35,8 @@ export default function Footer() {
       ></div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div className="border-t border-gray-200 mb-12"></div>
 
         {/* Navigation Section */}
         <div className="mb-20 grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-10">

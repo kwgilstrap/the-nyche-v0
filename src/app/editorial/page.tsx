@@ -3,9 +3,9 @@ import { ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
 import { getAllEditorialSlugs, type EditorialMeta } from '@/lib/getAllEditorialSlugs'
 
-export default function EditorialPage() {
+export default async function EditorialPage() {
   // Get all articles with error handling
-  const articles = getAllEditorialSlugs()
+  const articles = await getAllEditorialSlugs()
 
   return (
     <main>

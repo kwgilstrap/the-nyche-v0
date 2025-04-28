@@ -1,33 +1,29 @@
-import React from "react"
+"use client"
+import React, { useRef, useState } from "react"
 import Link from "next/link"
-import fs from "fs"
-import path from "path"
-import matter from "gray-matter"
+import { EditorialMeta } from "../lib/getAllEditorialSlugs"
 
-interface ArticleMeta {
-  slug: string
-  title: string
-  date: string
-  description: string
-}
+export default function FeaturedArticles({ articles }: { articles: EditorialMeta[] }) {
 
-function getAllEditorialSlugs(): ArticleMeta[] {
-  const dir = path.join(process.cwd(), "content/editorial")
-  const files = fs.readdirSync(dir).filter((f) => f.endsWith(".md"))
-  return files.map((file) => {
-    const raw = fs.readFileSync(path.join(dir, file), "utf-8")
-    const { data } = matter(raw)
-    return {
-      slug: file.replace(".md", ""),
-      title: data.title as string,
-      date: data.date as string,
-      description: data.description as string,
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const scrollInterval = useRef<NodeJS.Timeout | null>(null);
+
+  const startScrolling = () => {
+    if (!scrollInterval.current) {
+      scrollInterval.current = setInterval(() => {
+        if (scrollRef.current) {
+          scrollRef.current.scrollLeft += 4;
+        }
+      }, 16); // 60fps smooth
     }
-  })
-}
+  };
 
-export default function FeaturedArticles() {
-  const articles = getAllEditorialSlugs()
+  const stopScrolling = () => {
+    if (scrollInterval.current) {
+      clearInterval(scrollInterval.current);
+      scrollInterval.current = null;
+    }
+  };
 
   return (
     <section id="featured-articles" className="py-20 px-6 bg-gray-50">
@@ -35,7 +31,22 @@ export default function FeaturedArticles() {
       <p className="text-gray-600 mb-8">
         Smart, stylish, and always intentional. Explore our latest editorial picks.
       </p>
-      <div className="flex overflow-x-auto gap-6 py-6 snap-x snap-mandatory scrollbar-hide relative">
+      <div
+        ref={scrollRef}
+        className="flex overflow-x-auto gap-6 py-6 snap-x snap-mandatory scrollbar-hide relative"
+        onMouseMove={(e) => {
+          const container = scrollRef.current;
+          if (!container) return;
+          const { left, width } = container.getBoundingClientRect();
+          const x = e.clientX - left;
+          if (x > width * 0.75) {
+            startScrolling();
+          } else {
+            stopScrolling();
+          }
+        }}
+        onMouseLeave={stopScrolling}
+      >
         <div className="pointer-events-none absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-gray-50 to-transparent"></div>
         {articles.slice(0, 9).map(({ slug, title, date, description }) => (
           <article
