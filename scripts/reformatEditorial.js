@@ -4,7 +4,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 
-const editorialDir = path.join(process.cwd(), 'content/editorial');
+const editorialDir = path.join(process.cwd(), 'src/content/editorial');
 
 function reformatArticles() {
   const files = fs.readdirSync(editorialDir).filter(file => file.endsWith('.md'));

@@ -5,17 +5,17 @@ import { notFound } from 'next/navigation'
 import React from 'react'
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
-import MarkdownRenderer from '@/components/markdown-renderer'
+import MarkdownRenderer from "../../../components/markdown-renderer.tsx"
 
 // Generate all possible editorial routes at build time
 export async function generateStaticParams() {
   try {
-    const dir = path.join(process.cwd(), 'src/content/editorial')
+    const dir = path.join(process.cwd(), 'content/editorial')
+    console.log('DEBUG: Reading markdown dir →', dir)
     const files = fs.readdirSync(dir)
-    
-    // Filter to only include .md files
-    const markdownFiles = files.filter(file => file.endsWith('.md'))
-    
+    console.log('DEBUG: Found files →', files)
+
+    const markdownFiles = files.filter((file) => file.endsWith('.md'))
     return markdownFiles.map((file) => ({
       slug: file.replace('.md', ''),
     }))
@@ -26,48 +26,35 @@ export async function generateStaticParams() {
 }
 
 // Server Component for the article page
-export default async function EditorialPage({ params }: { params: { slug: string } }) {
+export default async function ArticlePage({
+  params,
+}: {
+  params: { slug: string }
+}) {
   try {
-    const filePath = path.join(process.cwd(), 'src/content/editorial', `${params.slug}.md`)
+    const filePath = path.join(
+      process.cwd(),
+      'content/editorial',
+      `${params.slug}.md`
+    )
+    console.log('DEBUG: Loading file →', filePath)
 
-    // Check if file exists
     if (!fs.existsSync(filePath)) {
-      console.error(`File not found: ${filePath}`)
       return notFound()
     }
-    
-    // Read and parse the markdown file
-    const fileContent = fs.readFileSync(filePath, 'utf-8')
-    const { content, data } = matter(fileContent)
-    
-    // Defensive fallbacks for frontmatter fields
-    const title = data?.title || 'Untitled Article'
-    const date = data?.date ? new Date(data.date) : new Date()
-    const formattedDate = date.toLocaleDateString('en-US', { 
-      year: 'numeric', 
-      month: 'long', 
-      day: 'numeric' 
-    })
-    
+
+    const fileContents = fs.readFileSync(filePath, 'utf-8')
+    const { content, data } = matter(fileContents)
+
     return (
-      <main className="container mx-auto px-4 py-8">
-        <div className="mb-8">
-          <Link href="/editorial" className="inline-flex items-center text-sm hover:underline mb-4">
-            <ArrowLeft className="h-4 w-4 mr-1" />
-            Back to Editorial
-          </Link>
-        </div>
-        
-        <article className="prose prose-lg max-w-3xl mx-auto">
-          <h1 className="text-4xl font-serif font-medium mb-2">{title}</h1>
-          <p className="text-sm text-gray-500 mb-8">
-            {formattedDate}
-          </p>
-          <div className="markdown-content">
-            <MarkdownRenderer content={content || 'Content not available'} />
-          </div>
-        </article>
-      </main>
+      <article>
+        <Link href="/editorial">
+          <ArrowLeft /> Back to Articles
+        </Link>
+        <h1>{data.title}</h1>
+        <p>{new Date(data.date).toLocaleDateString()}</p>
+        <MarkdownRenderer content={content} />
+      </article>
     )
   } catch (error) {
     console.error('Error rendering article:', error)

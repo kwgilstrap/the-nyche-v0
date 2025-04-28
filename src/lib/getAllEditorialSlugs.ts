@@ -19,7 +19,8 @@ export type EditorialMeta = {
 export function getAllEditorialSlugs(): EditorialMeta[] {
   try {
     // Get the path to markdown editorial content
-    const editorialDirectory = path.join(process.cwd(), 'src/content/editorial')
+    const editorialDirectory = path.join(process.cwd(), 'content/editorial')
+    console.log('DEBUG: Reading editorial directory →', editorialDirectory)
     
     // Check if directory exists
     if (!fs.existsSync(editorialDirectory)) {
@@ -29,6 +30,7 @@ export function getAllEditorialSlugs(): EditorialMeta[] {
     
     // Read all files in the directory
     const filenames = fs.readdirSync(editorialDirectory)
+    console.log('DEBUG: Found editorial files →', filenames)
     
     // Filter to only include markdown files
     const markdownFiles = filenames.filter(filename => filename.endsWith('.md'))
@@ -47,6 +49,7 @@ export function getAllEditorialSlugs(): EditorialMeta[] {
         
         // Read the file contents
         const fullPath = path.join(editorialDirectory, filename)
+        console.log('DEBUG: Reading editorial file →', fullPath)
         const fileContents = fs.readFileSync(fullPath, 'utf8')
         
         // Parse the frontmatter
