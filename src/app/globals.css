@@ -19,6 +19,14 @@
     animation-delay: 900ms;
   }
 
+  .animation-delay-1200 {
+    animation-delay: 1200ms;
+  }
+  
+  .animation-delay-1500 {
+    animation-delay: 1500ms;
+  }
+
   .animate-reveal {
     animation: reveal 1s ease forwards;
   }
@@ -135,6 +143,17 @@
     }
   }
 
+  @keyframes fadeUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
   /* Ensure we have proper en-dash support */
   .en-dash {
     font-feature-settings: "tnum";
@@ -145,6 +164,48 @@
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: 2rem;
+  }
+
+  /* Enhanced animations */
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease forwards;
+  }
+  
+  .animate-fade-in-slow {
+    animation: fadeIn 1.2s ease forwards;
+  }
+  
+  /* Enhanced transitional effects */
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 20px -10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Enhanced card styling */
+  .article-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .article-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Image hover effects */
+  .image-zoom-container {
+    overflow: hidden;
+  }
+  
+  .image-zoom {
+    transition: transform 0.8s ease;
+  }
+  
+  .image-zoom-container:hover .image-zoom {
+    transform: scale(1.05);
   }
 
   .article-lead {
