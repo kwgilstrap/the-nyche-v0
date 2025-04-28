@@ -5,7 +5,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Menu, X } from "lucide-react"
 
-// Update the navLinks array to only include the original categories
+// Navigation links
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "Editorial", href: "/editorial" },
@@ -22,6 +22,20 @@ export default function Navigation() {
   useEffect(() => {
     setIsOpen(false)
   }, [pathname])
+  
+  // Close mobile menu when Escape key is pressed
+  useEffect(() => {
+    const handleEsc = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsOpen(false)
+      }
+    }
+    
+    window.addEventListener('keydown', handleEsc)
+    return () => {
+      window.removeEventListener('keydown', handleEsc)
+    }
+  }, [])
 
   // Determine if a link is active
   const isActive = (href: string) => {
@@ -32,9 +46,16 @@ export default function Navigation() {
   }
 
   return (
-    <nav className="w-full">
+    <nav className="w-full flex justify-between items-center">
+      {/* Logo for mobile navigation */}
+      <div className="md:hidden">
+        <Link href="/" className="font-serif font-medium text-lg">
+          THE NYCHE
+        </Link>
+      </div>
+      
       {/* Desktop Navigation */}
-      <div className="hidden md:flex justify-center space-x-8">
+      <div className="hidden md:flex justify-center space-x-8 mx-auto">
         {navLinks.map((link) => (
           <Link
             key={link.name}
@@ -59,7 +80,7 @@ export default function Navigation() {
       </div>
 
       {/* Mobile Navigation Toggle */}
-      <div className="md:hidden flex justify-end">
+      <div className="md:hidden">
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="p-2 focus:outline-none"
@@ -72,20 +93,24 @@ export default function Navigation() {
 
       {/* Mobile Navigation Menu */}
       {isOpen && (
-        <div className="md:hidden absolute top-16 left-0 right-0 bg-white z-50 border-t border-gray-100 animate-fade-in">
-          <div className="flex flex-col items-center py-4">
+        <div className="md:hidden fixed inset-0 top-[57px] bg-white z-50 border-t border-gray-100 animate-fade-in">
+          <div className="flex flex-col items-center py-8">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
                 className={`
-                  w-full text-center py-3 text-sm tracking-widest uppercase font-medium
+                  w-full text-center py-4 text-base tracking-widest uppercase font-medium
                   all-small-caps transition-colors duration-300
-                  ${isActive(link.href) ? "text-black" : "text-gray-500 hover:text-black hover:bg-gray-50"}
+                  ${isActive(link.href) ? "text-black font-medium" : "text-gray-600 hover:text-black"}
                 `}
                 aria-current={isActive(link.href) ? "page" : undefined}
+                onClick={() => setIsOpen(false)}
               >
                 {link.name}
+                {isActive(link.href) && (
+                  <span className="block h-px w-12 bg-black mx-auto mt-1"></span>
+                )}
               </Link>
             ))}
           </div>

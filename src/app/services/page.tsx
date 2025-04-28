@@ -1,6 +1,5 @@
 import { ArrowLeft } from "lucide-react"
 import Link from "next/link"
-import ImageWithFallback from "@/components/ui/image-with-fallback"
 
 export default function ServicesPage() {
   const services = [
@@ -97,14 +96,15 @@ export default function ServicesPage() {
           {services.map((service, index) => (
             <div
               key={service.id}
-              className={`flex flex-col ${index % 2 === 1 ? "md:flex-row-reverse" : "md:flex-row"} gap-8 items-center`}
+              className={`flex flex-col items-center gap-8 ${
+                index % 2 === 1 ? "md:flex-row-reverse" : "md:flex-row"
+              }`}
             >
               <div className="w-full md:w-1/2 h-[280px] bg-gray-100 overflow-hidden">
-                <ImageWithFallback
-                  src={service.image || "/placeholder.svg"}
+                <img
+                  src={service.image}
                   alt={service.title}
-                  fallbackSrc="/placeholder.jpg"
-                  className="w-full h-full object-cover"
+                  className="w-full h-48 object-cover rounded-sm mb-4"
                 />
               </div>
               <div className="w-full md:w-1/2">

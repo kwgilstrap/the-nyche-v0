@@ -1,6 +1,5 @@
 import { ArrowLeft } from "lucide-react"
 import Link from "next/link"
-import ImageWithFallback from "@/components/ui/image-with-fallback"
 
 export default function FittingRoomPage() {
   const interactiveTools = [
@@ -43,11 +42,10 @@ export default function FittingRoomPage() {
           {interactiveTools.map((tool) => (
             <div key={tool.id} className="border border-gray-200 rounded-lg overflow-hidden">
               <div className="h-[220px] bg-gray-100 overflow-hidden">
-                <ImageWithFallback 
-                  src={tool.image || "/placeholder.svg"} 
-                  alt={tool.title} 
-                  fallbackSrc="/placeholder.jpg"
-                  className="w-full h-full object-cover" 
+                <img
+                  src={tool.image}
+                  alt={tool.title}
+                  className="w-full h-full object-cover rounded-sm"
                 />
               </div>
               <div className="p-6">

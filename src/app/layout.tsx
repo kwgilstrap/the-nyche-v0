@@ -2,8 +2,9 @@ import type React from "react"
 import "./globals.css"
 import type { Metadata } from "next"
 import { Inter, Playfair_Display } from "next/font/google"
-import Footer from "@/components/footer"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import Header from "@/components/header"
+import Footer from "@/components/footer"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -23,7 +24,7 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "The NYChe - Permanent Style for the Modern Individual",
   description: "Image isn't everything—it's the first thing.",
-    generator: 'v0.dev'
+  generator: 'v0.dev'
 }
 
 export default function RootLayout({
@@ -33,10 +34,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
-        {children}
-        <SpeedInsights />
+      <body className={`${inter.variable} ${playfair.variable} font-sans antialiased min-h-screen flex flex-col`}>
+        <Header />
+        <main className="flex-grow">
+          {children}
+        </main>
         <Footer />
+        <SpeedInsights />
       </body>
     </html>
   )

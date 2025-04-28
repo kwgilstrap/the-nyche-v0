@@ -290,7 +290,7 @@
   }
 
   h1 {
-    @apply text-4xl md:text-5xl lg:text-6xl font-bold leading-extra-tight;
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold leading-tight;
     letter-spacing: -0.025em;
   }
 

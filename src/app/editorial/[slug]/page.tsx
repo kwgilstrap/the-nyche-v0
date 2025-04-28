@@ -5,8 +5,7 @@ import { notFound } from 'next/navigation'
 import React from 'react'
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
-import MarkdownRenderer from "../../../components/markdown-renderer.tsx"
-import Navigation from '@/components/navigation'
+import MarkdownRenderer from "@/components/markdown-renderer"
 
 // Generate all possible editorial routes at build time
 export async function generateStaticParams() {
@@ -48,21 +47,15 @@ export default async function ArticlePage({
     const { content, data } = matter(fileContents)
 
     return (
-      <div className="min-h-screen bg-white">
-        <div className="border-b border-gray-100 py-6 mb-12">
-          <div className="container mx-auto px-4">
-            <Navigation />
-          </div>
-        </div>
-        
-        <article className="container max-w-4xl mx-auto px-4 py-8">
-          <div className="mb-12">
-            <Link href="/editorial" className="inline-flex items-center text-sm hover:underline mb-6 text-gray-600">
-              <ArrowLeft className="h-4 w-4 mr-1" />
+      <div className="py-12 md:py-16 bg-white">
+        <article className="container max-w-3xl mx-auto px-4 sm:px-6">
+          <div className="mb-10 md:mb-12">
+            <Link href="/editorial" className="inline-flex items-center text-sm hover:underline mb-6 text-gray-600 group">
+              <ArrowLeft className="h-4 w-4 mr-1 group-hover:transform group-hover:-translate-x-1 transition-transform" />
               Back to Articles
             </Link>
-            <h1 className="font-serif text-5xl font-medium tracking-tight mb-4">{data.title}</h1>
-            <p className="text-gray-500 tabular-nums">
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight mb-4">{data.title}</h1>
+            <p className="text-gray-500 tabular-nums text-sm">
               {new Date(data.date).toLocaleDateString('en-US', { 
                 year: 'numeric', 
                 month: 'long', 
