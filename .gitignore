@@ -1,8 +1,12 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# ignore only the real creds
+.env
 
-# dependencies
-/node_modules
+# but allow the template to be committed
+!.env.example
 
+
+# dependencies /node_modules
 # next.js
 /.next/
 /out/
@@ -16,8 +20,6 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files
-.env*
 
 # vercel
 .vercel
@@ -25,3 +27,26 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Added by Claude Task Master
+# Logs
+logs
+*.log
+dev-debug.log
+# Dependency directories
+node_modules/
+# Environment variables
+.env
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+# OS specific
+.DS_Store
+# Task files
+tasks.json
+tasks/ 

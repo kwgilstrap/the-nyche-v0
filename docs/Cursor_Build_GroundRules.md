@@ -1,67 +1,74 @@
 # Cursor Ground Rules for The NYChe
 
-> A minimalist set of operating principles for using Cursor effectively while building The NYChe. These are NOT part of `.cursorrules` or user settings — just a pinned, shared doc for clarity and consistency.
+_Last updated: 2025-04-30_
 
----
+> Development environment and tooling specifications for The NYChe project.
 
 ## 🧠 Primary Goal
 
-Keep Cursor focused, clean, and stylish — just like the product we’re building.
+Keep Cursor focused, clean, and efficient for building The NYChe.
 
----
+## ✅ Development Stack
 
-## ✅ What We Always Do
+For the canonical tech stack details, please refer to [the-nyche-master-strategy.md](./the-nyche-master-strategy.md#tech-stack).
 
-- Stick to **Next.js 13+ (App Router)** with **Tailwind CSS**
-- All content is **Markdown-based**, stored under `/src/content/`
-- Use **Vercel** for hosting, **Supabase** for forms or auth if needed
-- Default language is **JavaScript** (not TypeScript unless required)
+Core technologies:
+- **Next.js 14.2.28** (App Router)
+- **Tailwind CSS** (minimal config)
+- **TypeScript** (strict mode)
+- **Supabase** for data/auth
 
----
+## 🔄 Cursor Usage Rules
 
-## ❌ What We Avoid
+1. **Code Organization**
+   - Keep components modular and minimal
+   - Use TypeScript for all new components
+   - Follow App Router patterns strictly
 
-- No switching to other frontend frameworks mid-build (Svelte, Remix, Astro, etc.)
-- No backend frameworks unless scoped (Node API routes, Supabase)
-- No major dependency changes unless pre-approved
-- No custom CMS — **Markdown is the CMS**
+2. **Documentation**
+   - Inline comments only for complex logic
+   - Keep component props documented
+   - Update changelog for major changes
 
----
+3. **Version Control**
+   - Commit messages in present tense
+   - Branch from `main` for features
+   - PR template required for merges
 
-## 🔄 Cursor Usage Rules (to pin/context switch)
+## 📁 Project Structure
 
-### 1. Keep Responses Scope-Locked
-> “Only edit what’s needed, don’t introduce new tech unless asked.”
+- `/src/app` – Next.js App Router pages
+- `/src/components` – UI components
+- `/src/content` – Markdown content
+- `/public/images` – Local assets
+- `/styles/` – Tailwind config
+- `/docs/` – Project documentation
 
-### 2. Use Inline Docs Only When Necessary
-> “Comment when logic is non-obvious or requires domain context.”
+## 🛠 Environment Setup
 
-### 3. Don't Touch Brand Voice Unless Asked
-> “Content, copy, and voice should only be changed if explicitly requested.”
+For detailed environment setup instructions, please refer to [Environment-Setup.md](./Environment-Setup.md).
 
----
+Key requirements:
+- Node.js version specified in `.nvmrc`
+- Run `npm run setup` to install dependencies and copy `.env.example` → `.env`
+- Deno plugin enabled
+- ESLint + Prettier configured
+- Husky pre-commit hooks
+- Vercel CLI for deployments
 
-## 📦 Deno & Environment Notes
+## ⛔️ Restrictions
 
-- Deno plugin is enabled in Cursor (VS Code extension active)
-- Use `deno.json` or `settings.json` for tweaks
-- Don't try to replace Node.js stack with Deno yet — use for **edge functions only** (experimental)
+- No framework changes
+- No custom CMS integrations
+- No backend beyond Supabase
+- No external asset hosting
+- No experimental Next.js features
 
----
+## 📝 Brand Voice & Tone
 
-## 📁 Folder Structure Norms
+For brand voice guidelines and editorial standards, please refer to [the-nyche-brand-profile.md](./the-nyche-brand-profile.md#voice-and-tone).
 
-- `/src/components` – UI logic (CTA.js, Hero.js, etc.)
-- `/src/content` – Markdown blog/articles/services
-- `/public/images` – Local assets, not remote or bucket unless needed
-- `/updates/` – Scratchpad/backup code not in prod yet
-- `/docs/` – Strategy, usage, and pinned guidance like this
+## 🔄 Phase 3 Development
 
----
-
-## 🧘 TL;DR
-
-Cursor is here to support a minimalist, editorial, and stylish build.
-Stick to the tech stack. Don’t offer reinventions unless asked.
-Let’s ship The NYChe like a quiet, beautiful rebellion.
+For upcoming tasks and priorities, see [Phase3-Roadmap.md](./Phase3-Roadmap.md).
 

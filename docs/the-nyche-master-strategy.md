@@ -1,16 +1,18 @@
 # The NYChe – Master Strategy Document
 
-_Last updated: 2025-04-17_
+_Last updated: 2025-04-30_
 
 ---
 
 ## 🔭 Brand Vision & Tagline
 
-> **“Image isn’t everything—it’s the first thing.”**
+> **"Image isn't everything—it's the first thing."**
 
 The NYChe is a high-impact media platform rooted in NYC living and centered on intentional style. We blend editorial depth with personalized styling services for men who want to look sharp, live slow, and move with purpose—without chasing trends.
 
-This is a quiet rebellion against disposable hype and the algorithm. It’s clean, considered, and intentionally built for NYC-minded dressers who want peace, clarity, and style.
+This is a quiet rebellion against disposable hype and the algorithm. It's clean, considered, and intentionally built for NYC-minded dressers who want peace, clarity, and style.
+
+For detailed brand voice guidelines, see [the-nyche-brand-profile.md](./the-nyche-brand-profile.md).
 
 ---
 
@@ -26,7 +28,7 @@ This is a quiet rebellion against disposable hype and the algorithm. It’s clea
 
 - Own cedar shoe trees
 - Respect good tailoring
-- Read Mr. Porter and Drake’s blog for pleasure
+- Read Mr. Porter and Drake's blog for pleasure
 - Shop intentionally—buy once, buy right
 - Value substance over status
 
@@ -37,7 +39,7 @@ This is a quiet rebellion against disposable hype and the algorithm. It’s clea
 **Core Editorial Verticals:**
 
 - **Style** – Fit breakdowns, how-to guides, product philosophy
-- **Wardrobe** – Drake’s-centric picks, repair/care, curated sourcing
+- **Wardrobe** – Drake's-centric picks, repair/care, curated sourcing
 - **City** – NYC-specific lifestyle and slow living content
 - **Scene** – Dining, design, IRL local gems
 - **Desk** – Longform essays, interviews, features
@@ -59,13 +61,17 @@ This is a quiet rebellion against disposable hype and the algorithm. It’s clea
 
 | Layer        | Tech                | Notes                              |
 |--------------|---------------------|------------------------------------|
-| Frontend     | Next.js 13+         | App router + SSR/SSG support       |
-| Styling      | Tailwind CSS        | Utility-first, fast dev            |
+| Frontend     | Next.js 14.2.28     | App router + SSR/SSG support       |
+| Styling      | Tailwind CSS        | Minimal config, clean classes      |
 | CMS          | Markdown            | Easy version control, local content |
-| Hosting      | Vercel              | Git-linked, fast edge deployment   |
+| Hosting      | Vercel              | Staging ready, Git-linked          |
 | E-comm       | TikTok Shop         | Embedded iframe/modal              |
-| Backend      | Supabase (optional) | Booking forms, storage, auth       |
+| Backend      | Supabase            | Booking forms, storage, auth       |
 | Email        | Beehiiv             | Editorial distribution and CRM     |
+
+**Quick Setup:** Run `npm run setup` to bootstrap Node & deps (copies `.env.example` → `.env`).
+
+For detailed setup instructions, see [Environment-Setup.md](./Environment-Setup.md).
 
 ---
 
@@ -97,16 +103,7 @@ This is a quiet rebellion against disposable hype and the algorithm. It’s clea
 
 ## ✍️ Voice & Content Style
 
-- Smart, dry, sharp
-- Confident, never cheesy
-- Irreverent only when warranted
-- Imagine Scott Galloway x Aubrey Plaza in a Drake’s tie
-
-**Core Copy Pillars**
-
-- Every line should reflect intentional style
-- Style as identity, not trend
-- “Helpful, not hyped”
+For detailed voice and content guidelines, see [the-nyche-brand-profile.md](./the-nyche-brand-profile.md#voice--editorial-tone).
 
 ---
 
@@ -119,21 +116,36 @@ This is a quiet rebellion against disposable hype and the algorithm. It’s clea
 
 ---
 
-## 🧭 Roadmap (Q2–Q3)
+## 🧭 Development Roadmap
 
-| Phase | Goals                        | Time  |
-|-------|------------------------------|-------|
-| 1     | Design system + routing      | 2 wks |
-| 2     | Editorial layout + service UI| 2 wks |
-| 3     | Blog feed, booking flow      | 2 wks |
-| 4     | SEO polish + launch          | 1 wk  |
+### Phase 2 (Completed ✅)
+- Homepage layout and structure
+  - Clean Hero section with title and tagline
+  - Three clickable MiniCards for navigation
+  - Horizontal-scrolling FeaturedArticles
+  - Streamlined Newsletter signup
+- Editorial archive with proper data fetching
+- Footer with clean spacing and visual separation
+- Tailwind consistency and optimization
+- Component modularity and TypeScript compliance
+
+See [Phase2-Completion.md](./Phase2-Completion.md) for detailed completion report.
+
+### Phase 3 (In Progress 🚀)
+- Image integration across all sections
+- SEO optimization and indexing
+- Performance optimization
+- Visual polish and animations
+- Analytics implementation
+
+For complete Phase 3 details and timeline, see [Phase3-Roadmap.md](./Phase3-Roadmap.md).
 
 ---
 
 ## 🔗 Domain & Legal
 
 - **thenyche.com**  
-- **drakesguide.com** (redirects to “Wardrobe”)
+- **drakesguide.com** (redirects to "Wardrobe")
 - IP: TDS LLC  
 - All content, design, and code proprietary
 
