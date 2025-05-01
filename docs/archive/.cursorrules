@@ -1,0 +1,57 @@
+# .cursorrules – The NYChe
+
+Last updated: 2025-04-28
+
+---
+
+## Coding Standards
+
+- Use **Next.js 14.2.28** (App Router)
+- Style exclusively with **Tailwind CSS**
+- All content in **Markdown** under `/src/content/`
+- SSR/SSG preferred for performance
+- Use **Supabase** for forms/auth
+- No custom CMS or backend frameworks
+- Default to **TypeScript** for all new code
+- Modular, minimal components
+- Comment only when logic is non-obvious
+
+## File Structure
+
+- `/src/app` – Next.js App Router pages
+- `/src/components` – UI components
+- `/src/content` – Markdown content
+- `/public/images` – Local assets
+- `/styles/` – Tailwind config
+- `/docs/` – Project documentation
+
+## Editorial Voice
+
+- Smart, dry, confident, sometimes irreverent
+- Never performative or hyped
+- Designed for men who read between the seams
+- Every line should reflect intentional style
+
+## Design & UX
+
+- Editorial layout, white space is sacred
+- Typography-driven hierarchy
+- CTAs are soft, never spammy
+- Mobile-first, fast loads
+
+## Prohibited
+
+- No new frameworks or major dependencies
+- No backend beyond Supabase
+- No content or voice changes unless requested
+- No external asset hosting
+
+## Hosting & E-comm
+
+- Host on **Vercel**
+- Embed **TikTok Shop** for e-comm
+
+## Legal
+
+- All IP © TDS LLC
+- All content/design/code proprietary

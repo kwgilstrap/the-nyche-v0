@@ -4,7 +4,7 @@ import HomeMiniCards from "../components/HomeMiniCards"
 import FeaturedArticles from "../components/FeaturedArticles"
 import NewsletterSignup from "../components/NewsletterSignup"
 import { getAllEditorialSlugs } from "../lib/getAllEditorialSlugs"
-// @assistant:fix the three box layout// @assistant:fix the three box layout
+import Lookbook from "../components/lookbook";
 export default async function HomePage() {
   const articles = await getAllEditorialSlugs()
   return (

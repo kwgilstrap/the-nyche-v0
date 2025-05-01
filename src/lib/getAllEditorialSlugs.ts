@@ -10,8 +10,10 @@ export interface EditorialMeta {
 }
 
 export async function getAllEditorialSlugs(): Promise<EditorialMeta[]> {
-  const editorialDir = path.join(process.cwd(), "content", "editorial")
-  const files = fs.readdirSync(editorialDir)
+  const editorialDir = path.join(process.cwd(), "src", "content", "editorial")
+  const files = fs
+    .readdirSync(editorialDir)
+    .filter((file) => file.endsWith('.md'))
 
   const articles = files.map((file) => {
     const slug = file.replace(".md", "")

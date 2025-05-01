@@ -10,7 +10,7 @@ import MarkdownRenderer from "@/components/markdown-renderer"
 // Generate all possible editorial routes at build time
 export async function generateStaticParams() {
   try {
-    const dir = path.join(process.cwd(), 'content/editorial')
+    const dir = path.join(process.cwd(), 'src/content/editorial')
     console.log('DEBUG: Reading markdown dir →', dir)
     const files = fs.readdirSync(dir)
     console.log('DEBUG: Found files →', files)
@@ -34,7 +34,7 @@ export default async function ArticlePage({
   try {
     const filePath = path.join(
       process.cwd(),
-      'content/editorial',
+      'src/content/editorial',
       `${params.slug}.md`
     )
     console.log('DEBUG: Loading file →', filePath)
@@ -74,4 +74,4 @@ export default async function ArticlePage({
     console.error('Error rendering article:', error)
     return notFound()
   }
-}
+} 

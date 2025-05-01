@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "thee-nyche",
+  "private_key_id": "dd6def1a816eaee7832ec5bcfce8c8be4c26cbf5",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCx7/b831qcjyYn\nR8SPWWVvhDRNsFhPjiq/krVgXJRR+k5Ua5gcch0kyh4AIsM53MOcn3kdY0yXvMNT\no9HaE4wYKNwBEV4Ut0nXzt+gR7d0kMafogFQmNJpOgm2MsFyEWg2jmQyygaDGF9p\n2ww/Wy53RcEWdYNzA8hSNe77xegDLzpgV9PEVYciDUpGrwVkHGu3uiuVsdd/0C5J\nnv/JmLA19TkTnN9FCGTXaPxgClSAD3Q8LSPtgJ+EMt0h+DSPlwqq9s9DgGUdSsT9\nczg0+ZhH0nb+aMD/fJXrx+21S/hyZNodQQ7mSQYv0E0Ni2CCqvdrAhBsW5O+A8K9\n6JgVRbhdAgMBAAECggEAByQdx0qWzNyz3R9fZJoOXO+IgoEBck6UKZ8TghFabysl\nVJ8Cz6AcH6YFlooj8qEJBV1NvjUGKxAgzgJaQYRyUA/nuxqS1NsBmX8hxhbKu+C0\nOqOE+6fpHd796nQsA6NuNBj6gs1NKJq5ouUZyeXOE2xXEksst4N0g9Qf9LZzGBmO\nVO/09PCcuV7FA/W448nyzsvlRICKfkq0svccmW6Y8RwInQsZfxcSFs2meKlbe9d3\ntnaYEbSr6s/vQC794HFIqP+Ua19PwsKf6mNc42+9sJbQqNQBg63D5WtukLshDT8E\nbnNmKHGr9bIKlLxTqOfZR0XJy1QQNWHGTvpCo/6+UQKBgQD049YXeIfF8HLqOuyM\nieaeUY2l59hDKlnRdNUOoddkR+IxPSRnXLSWM3a6iobjZPpqBQVfti2+uO0L7gS7\nGlLuwy0BfTjHyfF2F13ZxXgz+jS9OVY/4fH/5FarggjGHefbWapwSlEZ3a9pAwyf\nLF2xmKGR8PSJikSNWtUc4JW9pQKBgQC6AomhNyFQjLTko4axOQ9YwUofBQ/gAnvD\n9EtSnPCtXzFotVMOdken2Xz6P46vjre1jzHm7z30t13R1x8GVi9qeUbRn7KNsl9b\nrjQyQALMh7Tuce84dINPsEQETByocEk+7N+sTLlhXApAFx/2u9GLqX2rx2JZHIjp\nO4D8GPWCWQKBgQCeVXUF5ds7QpS6FvD8iOi/8hC4dOdhvc8m2vgqJr/ByaxYk6Sm\n48yq1IluYMSH37D8vVRVJs/64Uv6i6EpbAK09yJxNQpyOoJRDRiUBdYLHTneImU+\nlpLGFVdoOoH7vjg7nYTSZ2p6Y9fW+K6/d4r4mavVVUp2ZxydnF3v9tE6NQKBgGn9\nyC71GyarBujBxZ52xSft/C5w0/rxb1TZf5Izm3EvLRhdOlajT3F1nKF8VfHzgPsT\n/Xt6F/O6CNvpmOQjeCFTueb4+OWFHpE/Ur7PesjRC2hTw9yHh8uAxUEtnabdVN9m\nWo3zqi6wI6chhjUyENVkXxfjJUdh2yILphQApOUBAoGBAKNPE+F6URVPKFlAQp6G\nyx3ZCXaP3Pcf3BacsL3x2S1ymfEG9LrUd6n02TSTFPs7U73ehMByO5E7PrHZerOZ\nDr0SeABm7O+dJCBMgw+myIIhRjRKinW22veadBmKzbXIcByadMJfbiyT6xGHiHH8\nlBp5xi7D2xUWsvGbecSEsE5E\n-----END PRIVATE KEY-----\n",
+  "client_email": "the-nyche-v0@thee-nyche.iam.gserviceaccount.com",
+  "client_id": "110194338347457692374",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/the-nyche-v0%40thee-nyche.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
