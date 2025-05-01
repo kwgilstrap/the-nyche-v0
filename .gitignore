@@ -50,3 +50,5 @@ node_modules/
 # Task files
 tasks.json
 tasks/ 
+.env.local
+thee-nyche-dd6def1a816e.json
