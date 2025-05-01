@@ -1,12 +1,14 @@
 {
-  "name": "my-v0-project",
-  "version": "0.1.0",
+  "name": "the-nyche-v0",
+  "version": "1.0.0",
+  "type": "module",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "setup": "nvm install && npm ci && cp .env.example .env.local || true"
   },
   "dependencies": {
     "@hookform/resolvers": "3.9.1",
@@ -49,6 +51,7 @@
     "lucide-react": "0.454.0",
     "next": "^14.2.28",
     "next-themes": "0.4.4",
+    "openai": "^4.96.2",
     "react": "18.2.0",
     "react-day-picker": "8.10.1",
     "react-dom": "18.2.0",
@@ -56,6 +59,7 @@
     "react-markdown": "9.0.1",
     "react-resizable-panels": "2.1.7",
     "recharts": "2.15.0",
+    "sharp": "^0.34.1",
     "sonner": "1.7.1",
     "tailwind-merge": "2.5.5",
     "tailwindcss-animate": "1.0.7",

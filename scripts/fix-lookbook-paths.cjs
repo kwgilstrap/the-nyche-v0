@@ -14,11 +14,8 @@ filesToFix.forEach(filePath => {
   }
 
   let content = fs.readFileSync(filePath, 'utf8');
-  // Matches "/lookbook/shot1.jpg" or '/lookbook/shot2.jpg'
-  const updated = content.replace(
-    /(["'])\/lookbook\/(shot\d+\.jpg)\1/g,
-    `'$1/images/lookbook/$2'.replace('$1', '')`
-  );
+  // Replace old lookbook paths with new /images/lookbook paths
+  const updated = content.replace(/\/lookbook\/(shot\d+\.jpg)/g, '/images/lookbook/$1');
 
   if (content !== updated) {
     fs.writeFileSync(filePath, updated, 'utf8');
